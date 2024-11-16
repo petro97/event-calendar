@@ -1,0 +1,47 @@
+.app {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #1c1c1e;
+    padding: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.month {
+    border: 1px solid #333;
+    padding: 10px;
+    background: #2e2e30;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day {
+    padding: 5px;
+    text-align: center;
+}
+
+.has-event {
+    background-color: #ffa500;
+    border-radius: 50%;
+    color: black;
+}
+
+.event-filter button {
+    margin-right: 5px;
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.event-filter button:hover {
+    background-color: #666;
+}

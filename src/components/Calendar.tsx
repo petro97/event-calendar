@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { events } from '../eventsData/events.js'
 import '../styles/calendar.less'
 import EventsInfoModal from './EventsInfoModal'
-import { eventColors } from '../constants/calendar'
+import { weekdays } from '../constants/calendar'
 import EventFilter from './EventFilter'
 import { getEventColors } from '../helpers/helperFunctions'
 
@@ -45,6 +45,13 @@ const Calendar = () => {
         <h3>
           {monthName} {year}
         </h3>
+        <div className="weekdays">
+          {weekdays.map((day, index) => (
+            <div key={index} className="weekday">
+              {day}
+            </div>
+          ))}
+        </div>
         <div className="days-grid">
           {[...Array(daysInMonth)].map((_, dayIndex) => (
             <div
@@ -105,7 +112,6 @@ const Calendar = () => {
       />
       <div className="calendar-grid">{months}</div>
 
-      {/* Modal Overlay */}
       {selectedEvents && (
         <EventsInfoModal events={selectedEvents} onClosePopup={onClosePopup} />
       )}

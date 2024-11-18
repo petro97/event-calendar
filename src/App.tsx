@@ -3,15 +3,14 @@ import Calendar from './components/Calendar.tsx'
 import './styles/calendar.less'
 import './App.less'
 import AppHeader from './components/AppHeader'
+import AppFooter from './components/AppFooter'
 
 const App = () => {
-  // const [eventFilter, setEventFilter] = useState(null);
-
   return (
     <div className="app">
       <AppHeader />
-      {/*<EventFilter setEventFilter={setEventFilter} />*/}
       <Calendar />
+      <AppFooter />
     </div>
   )
 }

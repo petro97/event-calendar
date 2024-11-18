@@ -1,0 +1,55 @@
+@import './variables.less';
+
+.app-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: @bg-dark;
+  color: @text-muted;
+  height: 100px;
+  margin-top: 40px;
+
+  .footer-logo {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    font-weight: bold;
+    color: @main-red;
+  }
+
+  .footer-menu {
+    ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin: 0 1rem;
+
+        a {
+          color: @text-muted;
+          text-decoration: none;
+          font-size: 1rem;
+          transition: color 0.3s;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .app-footer {
+    .footer-menu {
+      ul {
+        flex-direction: column;
+        align-items: center;
+
+        li {
+          margin: 0.5rem 0;
+        }
+      }
+    }
+  }
+}

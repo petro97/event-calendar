@@ -1,22 +1,31 @@
-import React from 'react';
-import '../styles/styles.css';
+import React from 'react'
+import '../styles/event-filter.less'
+import { eventColors } from '../constants/calendar'
 
 interface EventFilterProps {
-    onSelectFilter: (filter: string | null) => void;
+  handleSetEventFilter: (filter: string | null) => void
+  eventFilter: string | null
 }
-const EventFilter: React.FC<EventFilterProps> = ({ onSelectFilter }) => {
-    const eventTypes = ["Meeting with an expert", "Question-answer", "Conference", "Webinar"];
+const EventFilter: React.FC<EventFilterProps> = ({
+  handleSetEventFilter,
+  eventFilter
+}) => {
+  return (
+    <div className="event-filter">
+      {Object.keys(eventColors).map((type) => (
+        <button
+          key={type}
+          onClick={() =>
+            handleSetEventFilter(type === eventFilter ? null : type)
+          }
+          className={` ${eventColors[type]} ${eventFilter === type ? 'active' : ''}`}
+        >
+          {' '}
+          {type}{' '}
+        </button>
+      ))}
+    </div>
+  )
+}
 
-    return (
-        <div className="event-filter">
-            {eventTypes.map(type => (
-                <button key={type} onClick={() => onSelectFilter(type)}>
-                    {type}
-                </button>
-            ))}
-            <button onClick={() => onSelectFilter(null)}>Clear Filter</button>
-        </div>
-    );
-};
-
-export default EventFilter;
+export default EventFilter

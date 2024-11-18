@@ -1,0 +1,81 @@
+@import './variables.less';
+
+.event-filter {
+  display: flex;
+  //justify-content: center;
+  margin-bottom: 20px;
+
+  button {
+    color: white;
+    padding: 5px 20px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 16px;
+    height: 28px;
+    //transition: background-color 0.3s, color 0.3s;
+
+    &:active, &:focus-visible, &:focus {
+      outline: none;
+      border: none;
+      font-weight: unset;
+    }
+
+    &.active {
+      color: black; // Text color when active
+      outline: none;
+      border: none;
+      font-weight: unset;
+    }
+
+    &.red {
+      background-color: @transparent-red;
+      color: @main-red;
+
+      &.active {
+        background-color: @main-red;
+        color: black;
+      }
+    }
+
+    &.green {
+      background-color: @transparent-green;
+      color: @main-green;
+
+      &.active {
+        background-color: @main-green;
+        color: black;
+      }
+    }
+
+    &.orange {
+      background-color: @transparent-orange;
+      color: @main-orange;
+
+      &.active {
+        background-color: @main-orange;
+        color: black;
+      }
+    }
+
+    &.blue {
+      background-color: @transparent-color;
+      color: @main-blue;
+
+      &.active {
+        background-color: @main-blue;
+        color: black;
+      }
+    }
+
+
+  }
+  @media (max-width: 768px) {
+      flex-direction: column;
+    max-width: 250px;
+
+    button {
+      margin: 5px;
+    }
+  }
+}

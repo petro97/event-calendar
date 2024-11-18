@@ -1,0 +1,66 @@
+@import './variables.less';
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //padding: 1rem 2rem;
+  color: #fff;
+  height: 60px;
+  margin-bottom: 20px;
+
+  .logo {
+    color: @main-red;
+    font-size: 1.5rem;
+    height: auto;
+    font-weight: bold;
+  }
+
+  .menu {
+    ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-left: 2rem;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 1rem;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #ddd;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 260px; /* Increased height */
+
+    .logo {
+      display: block;
+    }
+
+    .menu {
+      ul {
+        flex-direction: column;
+        align-items: flex-start;
+
+        li {
+          margin: 1rem 0;
+          display: none;
+        }
+      }
+    }
+  }
+}
